@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto_Curso.Views.TransactionAdd"
+             Title="TransactionAdd">
+    <VerticalStackLayout>
+        <CollectionView x:Name ="CollectionViewTransactions"/>
+        <Label TextColor="Red" IsVisible="false" x:Name="Error"/>
+        <Border
+            Margin="15"
+            Padding="15"
+            BackgroundColor="Black"
+            Stroke="Transparent"
+            StrokeShape="RoundRectangle 30">
+            <Grid ColumnDefinitions="*, 30" RowDefinitions="Auto">
+                <Label 
+            Grid.Row="0"
+            Grid.Column="0"    
+            Text="Criar uma nova contabilidade"
+            HorizontalOptions="Center" 
+            TextColor="White"/>
+            </Grid>
+        </Border>
+
+        <Grid Margin="30,0" ColumnDefinitions="*,*">
+            <RadioButton  Content="Receita" IsChecked="True" x:Name="RadioIncome"/>
+            <RadioButton  Grid.Column="1" Content="Despesa" HorizontalOptions="End" x:Name="DespesaRadioButton"  />
+        </Grid>
+        <Entry x:Name="EntryNome" Margin="15,0" Placeholder="Nome" />
+
+        <DatePicker x:Name="DatePickerDate" Margin="15,0" />
+
+        <Entry x:Name="EntryValor" Margin="15,0" Placeholder="Valor" />
+
+        <Button Margin="15,0" Text="Salvar" HorizontalOptions="Center" Clicked="OnButton_Save_TransactionAdd" />
+    </VerticalStackLayout>
+</ContentPage>
